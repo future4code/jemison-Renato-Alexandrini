@@ -1,0 +1,3 @@
+# Aprendizados da semana
+
+Esta semana na **Labenu**, aprendemos alguns comandos básicos do **terminal** e aprendemos através do **git** como funciona aproximadamente a edição de um trabalho, entre clonar o trabalho de origem, criar uma ramificação para realizar as alterações, comitar quando as alterações estiverem concluidas para somente depois disso devolver o trabalho ao servidor de origem, sem erros. 
