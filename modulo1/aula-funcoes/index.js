@@ -131,7 +131,15 @@ Resposta
     console.log(numeroPar()) 
 
 
-//d) Não consegui de forma alguma, rever na sexta
+//d)
+ function alterarTexto(fraseDoUsuario) {
+     fraseDoUsuario = prompt("Digite uma frase")
+
+ let textoMaisculo = fraseDoUsuario.toUpperCase()  
+ let tamanhoFrase = fraseDoUsuario.length
+     return console.log(`o texto ${textoMaisculo} possui ${tamanhoFrase} caracteres`)
+ } 
+alterarTexto()
 
 
 
@@ -147,36 +155,78 @@ Divisão: 10
 
 Resposta:
 */
-
-let num1 = prompt("Insira um número")
-let num2 = prompt("Insira um número")
-
-function soma1(num1, num2){
-    let sum = Number(num1) + Number(num2)
-    return sum 
+let num1 = prompt("digite o primeiro número")
+let num2 = prompt("digite o segundo número")
+    
+function soma1(num1,num2){
+    
+   let sum = Number(num1) + Number(num2)
+   return sum 
 }
 
-function subtracao (num1, num2){
-    let sub = Number(num1) - Number(num2)
-    return sub 
+function subtracao(){
+   
+   let sub = Number(num1) - Number(num2)
+   return sub 
 }
 
-function multiplicacao(num1, num2){
-    let mult = Number(num1) * Number(num2)
-    return mult 
+function multiplicacao(){
+   
+   let mult = Number(num1) * Number(num2)
+   return mult 
 }
 
-function divisao(num1, num2){
-    let div = Number(num1) / Number(num2)
-    return div 
+function divisao(){
+   let div = Number(num1) / Number(num2)
+   return div 
+}
+console.log("soma = ", + soma1(num1, num2))
+console.log("subtração = ", + subtracao(num1, num2))
+console.log("multiplicação = ", + multiplicacao(num1, num2))
+console.log("divisão = ", + divisao(num1, num2))
+
+
+
+/* Desafios
+
+1. Funções são trechos de códigos como quaisquer outros mas que podemos acessá-los mais de uma vez ao longo do código
+ através de invocações/chamadas. Então, funções podem chamar/invocar outras funções também. Sua tarefa é escrever duas funções
+    a) Escreva uma *arrow function* que recebe um parâmetro e imprime no console esse parâmetro
+    b) Escreva outra *arrow function* que recebe dois valores como parâmetros mas **nenhum retorno.**
+     Faça a soma entre esses valores e chame a sua primeira função mandando este resultado da soma como entrada para imprimi-lo
+
+    Resposta*/ 
+
+
+    const imprime = (resultado)=> console.log(resultado)
+
+    const somaNumeros = ()=>{
+       num1 = prompt("Digite o primeiro número")
+       num2 = prompt("Digite o segundo número")
+    
+    let resultado = Number(num1) + Number(num2)
+    
+       imprime(resultado)
+    }
+    
+    somaNumeros()
+
+
+
+/*2.Faça uma função que execute o teorema de Pitágoras, recebendo dois catetos e calculando o valor da hipotenusa.
+Retorne este valor, invoque a função e imprima o resultado no console.
+
+Resposta:
+*/
+
+const calculaHipotenusa = (cat1,cat2)=>{
+         
+    hip = Math.sqrt(Number(cat1 * cat1) + Number(cat2 * cat2))
+    
+    return hip
 }
 
-let sum = soma1()
-let sub = subtracao()
-let mult = multiplicacao()
-let div = divisao()
+let cat1 = prompt("Insira o primeiro cateto")
+let cat2 = prompt("Insira o segundo cateto")
 
-console.log("soma = ", + sum )
-console.log("subtração = ", + sub  )
-console.log("multiplicação = ", + mult )
-console.log("divisão = ", + div )
+console.log(calculaHipotenusa(cat1,cat2))
