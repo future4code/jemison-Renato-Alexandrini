@@ -185,5 +185,138 @@ else{
 
 
     /*Desafios
+    1.Modifique o código do exercício 4 de escrita de código para, antes de imprimir a mensagem "Bom filme!",
+    pergunte ao usuário, pelo prompt qual lanchinho ele vai comprar (pipoca, chocolate, doces, etc)
+    e imprima no console as mensagens "Bom filme!" e "Aproveite o seu [LANCHINHO]", trocando [LANCHINHO] pelo que o usuário colocou no input.
 
+    Resposta:
     */
+
+let generoFilmeNovo = prompt("digite o gênero do filme").toUpperCase()
+let valorIngressoNovo = Number(prompt("Digite o valor do ingresso"))
+
+
+if(generoFilme == "FANTASIA" && valorIngresso < 15){
+    let lanchinho = prompt("insira o lanche que será adquirido com o ingresso")
+
+    console.log("Bom filme")
+    console.log(`Aproveite seu/sua ${lanchinho} !`)  
+  }
+else{
+     console.log("Por favor, escolha outro filme :(")
+    }
+
+
+    /*2.Você foi contratado para criar um sistema de vendas de ingressos de jogos de um estádio de futebol. Para esta compra,
+    o usuário deve fornecer algumas informações:
+      - Nome completo;
+      - Tipo de jogo: IN indica internacional; e DO indica doméstico;
+      - Etapa do jogo: SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final
+      - Categoria: pode ser as opções 1, 2, 3 ou 4;
+      - Quantidade de ingressos
+      O seu sistema deve solicitar estas informações ao usuário, através do prompt.
+      Além disso, ele deve imprimir tudo isso, junto com o valor de cada ingresso 
+      e o valor total que o usuário tem que pagar (ou seja, o valor unitário do ingresso multiplicado
+      pela quantidade). Abaixo, há a tabela com os valores de cada ingresso e exemplos de execução do programa. 
+      Lembrando que o valor de jogos internacionais é o mesmo de jogos domésticos, mas seus preços devem ser multiplicados pelo valor do dólar (considerar o dólar = R$4,10)
+
+      Resposta:
+      */
+
+
+      let nomeEspectador = prompt("Digite seu nome completo")
+      let localJogo =prompt("Escolha o tipo de jogo, IN para internacional e DO para doméstico").toUpperCase()
+      let etapaDoJogo = prompt("Escolha a etapa do jogo, SF para semi-final, DT para decisão de terceiro lugar e FI para as finais").toUpperCase()
+      let categoriaJogo = Number(prompt("Escolha uma categoria entre 1, 2, 3 ou 4"))
+      let quantidadeDeIngressos = Number(prompt("Escolha a quantidade de ingressos"))
+
+      valorIngressoJogo = (localJogo) =>{
+        if (localJogo == "IN"){
+          multiplicadorValor = 4.10
+          nomeLocalJogo = "Internacional"
+          return multiplicadorValor, nomeLocalJogo
+        }
+        else if (localJogo == "DO"){
+          multiplicadorValor = 1
+          nomeLocalJogo = "Doméstico"
+          return multiplicadorValor, nomeLocalJogo
+        }
+        else{
+          console.log("Escolha uma opção entre Internacional(IN) ou Doméstico(DO)!")
+          }
+      }
+      
+      valorIngressoJogo(localJogo)
+      
+      escolhaDaEtapaJogo = (etapaDoJogo) =>{
+        if(etapaDoJogo == "SF"){
+          etapaEscolhida = 0
+          nomeEtapaJogo = "Semi FInais"
+          return etapaEscolhida, nomeEtapaJogo
+        }
+        else if (etapaDoJogo == "DT"){
+          etapaEscolhida = 4
+          nomeEtapaJogo = "Disputa de Terceiro lugar"
+          return etapaEscolhida, nomeEtapaJogo
+      }
+      else if (etapaDoJogo == "FI"){
+        etapaEscolhida = 8
+        nomeEtapaJogo = "Finais"
+        return etapaEscolhida, nomeEtapaJogo
+    }
+    }
+     escolhaDaEtapaJogo(etapaDoJogo)
+
+     let valoresDosJogos = Number(etapaEscolhida + categoriaJogo)
+     switch (valoresDosJogos){
+       case 1:
+        valorRealIngresso = 1320
+          break
+       case 2:
+        valorRealIngresso = 880
+          break
+       case 3:
+        valorRealIngresso = 550
+          break
+       case 4:
+        valorRealIngresso = 220
+          break
+       case 5:
+        valorRealIngresso = 660
+         break
+       case 6:
+        valorRealIngresso = 440
+          break
+       case 7:
+        valorRealIngresso = 330
+           break
+        case 8:
+         valorRealIngresso = 170
+            break
+        case 9:
+         valorRealIngresso = 1980
+           break
+        case 10:
+         valorRealIngresso = 1320
+           break
+        case 11:
+          valorRealIngresso = 880
+            break
+        case 12:
+          valorRealIngresso = 330
+            break
+              default:
+                console.log("Insira as informações corretas")
+     }
+      
+
+    let valorFinalCompra = (valorRealIngresso * multiplicadorValor) * quantidadeDeIngressos
+
+    console.log(`Dados da compra:`)
+    console.log(`nome do cliente: ${nomeEspectador}`)
+    console.log(`tipo de jogo ${nomeLocalJogo}`)
+    console.log(`Etapa do jogo: ${nomeEtapaJogo}`)
+    console.log(`categoria do jogo ${categoriaJogo}`)
+    console.log(`quantidade de ingressos: ${quantidadeDeIngressos}`)
+    console.log(`Valor do ingresso ${valorRealIngresso}`)
+    console.log(`Valor total da compra: ${valorFinalCompra}`)
