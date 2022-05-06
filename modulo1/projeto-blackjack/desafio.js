@@ -1,4 +1,4 @@
-/**
+/*
  * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
  * 
  * 
@@ -25,6 +25,7 @@ if(confirm("Deseja iniciar uma nova rodada?")){
    else{console.log("Fim de Jogo")}
 
 //embaralhar em caso de 2 ases iniciais -
+
 while(jogador[0].valor + jogador[1].valor == 22 || computador[0].valor + computador[1].valor == 22){
    jogador.pop()
    jogador.pop()
@@ -36,22 +37,58 @@ while(jogador[0].valor + jogador[1].valor == 22 || computador[0].valor + computa
    computador.push(comprarCarta())
 }
 
-//função para verificar cartas e valores
-let displayCartas = ""
-let somaDasCartas = 0
-const verificarCartas = () =>{
-   for(carta of jogador){
-      displayCartas = + jogador.texto + " "
-   for(carta of jogador){
-      somaDasCartas = + jogador.valor
+let somaCartas = 0
+let pontosJogador = 0
+let maoJogador = ""
+let pontosComputador = 0
+let maoComputador = ""
 
-      return displayCartas, somaDasCartas
-}}}
-verificarCartas(jogador)
+const calcularCartas = (array) =>{
+for (carta of array){
+   maoDeCartas = + jogador.texto
+   somaCartas = +jogador.valor
 
-      while(somaDasCartas < 21){ confirm(`você possui ${displayCartas}, um total de ${somaDasCartas} \n 
-      o computador possui: ${computador[0].texto} \n Deseja comprar uma nova carta`)
-        jogador.push(comprarCarta())
-        verificarCartas() 
+   return maoDeCartas, somaCartas
+}}
+
+calcularCartas(jogador)
+calcularCartas(computador)
+
+while(somaCartas < 21){
+if (confirm(`sua mão possui ${maoDeCartas} e um total de ${somaCartas} pontos \n 
+o computador possui ${computador[0]} \n 
+Deseja comprar uma nova carta?`)){
+
+  jogador.push(comprarCarta())
+  calcularCartas(jogador)
+  pontosJogador = somaCartas
+  maoJogador = maoDeCartas
 }
-      console.log(displayCartas, somaDasCartas)
+else {
+   computador.push(comprarCarta)
+calcularCartas(computador)
+pontosComputador = somaCartas
+maoComputador = maoDeCartas
+}
+if (somaCartas >= 21){
+   computador.push(comprarCarta)
+calcularCartas(computador)
+pontosComputador = somaCartas
+maoComputador = maoDeCartas
+}}
+
+if(pontosJogador == pontosComputador){
+   console.log(`Jogador: ${maoJogador} ${pontosJogador} \n
+   computador: ${maoComputador} ${pontosComputador} \n
+   Houve um empate`)
+}
+else if(pontosJogador <= 21 || pontosJogador > pontosComputador){
+   console.log(`Jogador: ${maoJogador} ${pontosJogador} \n
+   computador: ${maoComputador} ${pontosComputador} \n
+   O Jogador ganhou!`)
+}
+else if(pontosComputador <= 21 || pontosComputador > pontosJogador){
+   console.log(`Jogador: ${maoJogador} ${pontosJogador} \n
+   computador: ${maoComputador} ${pontosComputador} \n
+   O Jogador ganhou!`)
+}

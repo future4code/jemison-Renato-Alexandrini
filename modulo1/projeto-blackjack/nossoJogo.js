@@ -1,4 +1,4 @@
-/**
+/*
  * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
  * 
  * 
@@ -25,16 +25,16 @@
     } 
     else{console.log("Fim de jogo!")}
 
-let maoJogador = jogadorBlackjack[0].valor + jogadorBlackjack[1].valor
-let maoComputador = computadorBlackjack[0].valor + computadorBlackjack[0].valor
+let maoJogadorBlackjack = jogadorBlackjack[0].valor + jogadorBlackjack[1].valor
+let maoComputadorBlackjack = computadorBlackjack[0].valor + computadorBlackjack[0].valor
 
-console.log(`Suas cartas são: ${jogadorBlackjack[0].texto} e ${jogadorBlackjack[1].texto}, você tem ${maoJogador} pontos \n 
-As cartas do computador são: ${computadorBlackjack[0].texto} e ${computadorBlackjack[1].texto}, ele tem ${maoComputador} pontos`)
+console.log(`Suas cartas são: ${jogadorBlackjack[0].texto} e ${jogadorBlackjack[1].texto}, você tem ${maoJogadorBlackjack} pontos \n 
+As cartas do computador são: ${computadorBlackjack[0].texto} e ${computadorBlackjack[1].texto}, ele tem ${maoComputadorBlackjack} pontos`)
 
-if(maoJogador == maoComputador){
+if(maoJogadorBlackjack == maoComputadorBlackjack){
    console.log("A Partida terminou empatada!")
 }
-else if(maoJogador > maoComputador){
+else if(maoJogadorBlackjack > maoComputadorBlackjack){
    console.log("Parabéns você venceu a partida!")
 }
 else (console.log("Que pena, você perdeu. Boa sorte na Próxima!"))
