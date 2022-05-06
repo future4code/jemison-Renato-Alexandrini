@@ -193,3 +193,50 @@ for(let produtosYpe of arrayApenasYpeNovo){
   console.log(`Compre ${produtosYpe.nome} por apenas ${produtosYpe.preco}`)
 }
 
+
+/* Desafios
+
+1.Dado o seguinte array de pokémons, realize as operações pedidas nos itens abaixo:
+const pokemons = [
+   { nome: "Bulbasaur", tipo: "grama" },
+   { nome: "Bellsprout", tipo: "grama" },
+   { nome: "Charmander", tipo: "fogo" },
+   { nome: "Vulpix", tipo: "fogo" },
+   { nome: "Squirtle", tipo: "água" },
+   { nome: "Psyduck", tipo: "água" },
+]
+
+a) Crie um novo array que contenha apenas o nome dos pokémons em ordem alfabética
+b) Crie um novo array apenas com os tipos dos pokémons, **sem repetição**
+
+Resposta:
+*/
+
+
+const pokemons = [
+  { nome: "Bulbasaur", tipo: "grama" },
+  { nome: "Bellsprout", tipo: "grama" },
+  { nome: "Charmander", tipo: "fogo" },
+  { nome: "Vulpix", tipo: "fogo" },
+  { nome: "Squirtle", tipo: "água" },
+  { nome: "Psyduck", tipo: "água" },
+]
+
+const novoArrayOrdemAlfabetica = pokemons.map((item)=>{
+
+  return item.nome
+})
+console.log(novoArrayOrdemAlfabetica.sort())
+
+const novoArraySemRepeticao = pokemons.map((item)=>{
+  nomePokemon = item.nome
+  tipoPokemon = item.tipo
+  return {nomePokemon, tipoPokemon}
+})
+
+let array = novoArraySemRepeticao
+ for(let poke of array){
+   if (poke.tipoPokemon == poke.tipoPokemon)
+   array.pop()
+ }
+ console.log(array)
