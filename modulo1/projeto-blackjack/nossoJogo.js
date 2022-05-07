@@ -26,7 +26,7 @@
     else{console.log("Fim de jogo!")}
 
 let maoJogadorBlackjack = jogadorBlackjack[0].valor + jogadorBlackjack[1].valor
-let maoComputadorBlackjack = computadorBlackjack[0].valor + computadorBlackjack[0].valor
+let maoComputadorBlackjack = computadorBlackjack[0].valor + computadorBlackjack[1].valor
 
 console.log(`Suas cartas são: ${jogadorBlackjack[0].texto} e ${jogadorBlackjack[1].texto}, você tem ${maoJogadorBlackjack} pontos \n 
 As cartas do computador são: ${computadorBlackjack[0].texto} e ${computadorBlackjack[1].texto}, ele tem ${maoComputadorBlackjack} pontos`)

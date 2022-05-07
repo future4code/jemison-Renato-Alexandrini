@@ -27,68 +27,70 @@ if(confirm("Deseja iniciar uma nova rodada?")){
 //embaralhar em caso de 2 ases iniciais -
 
 while(jogador[0].valor + jogador[1].valor == 22 || computador[0].valor + computador[1].valor == 22){
-   jogador.pop()
-   jogador.pop()
+ //  jogador.shift()
+ //  jogador.pop()
+ jogador =[]
    jogador.push(comprarCarta())
    jogador.push(comprarCarta())
-   computador.pop()  
-   computador.pop()
+ //  computador.shift()  
+ //  computador.pop()
+ computador = []
    computador.push(comprarCarta())
    computador.push(comprarCarta())
 }
 
-let somaCartas = 0
-let pontosJogador = 0
-let maoJogador = ""
-let pontosComputador = 0
-let maoComputador = ""
+let maoJogador = " "
+let somaJogador = 0
 
-const calcularCartas = (array) =>{
-for (carta of array){
-   maoDeCartas = + jogador.texto
-   somaCartas = +jogador.valor
+let maoComputador = " "
+let somaComputador = 0
 
-   return maoDeCartas, somaCartas
-}}
-
-calcularCartas(jogador)
-calcularCartas(computador)
-
-while(somaCartas < 21){
-if (confirm(`sua mão possui ${maoDeCartas} e um total de ${somaCartas} pontos \n 
-o computador possui ${computador[0]} \n 
+//const calcularCartasJogador = (jogador) =>{
+for(let carta of jogador){
+   maoJogador +=  carta.texto 
+   somaJogador +=  carta.valor
+}   //return maoJogador, somaJogador
+   for(let carta of computador){
+      maoComputador +=  carta.texto 
+      somaComputador +=  carta.valor
+   }
+ let confirmador = 0
+   while(somaJogador <= 21 && confirmador != 1){
+if (confirm(`sua mão possui ${maoJogador} e um total de ${somaJogador} pontos \n 
+o computador possui ${computador[0].texto} \n 
 Deseja comprar uma nova carta?`)){
-
+   maoJogador = " "
+   somaJogador = 0
   jogador.push(comprarCarta())
-  calcularCartas(jogador)
-  pontosJogador = somaCartas
-  maoJogador = maoDeCartas
-}
-else {
-   computador.push(comprarCarta)
-calcularCartas(computador)
-pontosComputador = somaCartas
-maoComputador = maoDeCartas
-}
-if (somaCartas >= 21){
-   computador.push(comprarCarta)
-calcularCartas(computador)
-pontosComputador = somaCartas
-maoComputador = maoDeCartas
+  for(let carta of jogador){
+   maoJogador +=  carta.texto 
+   somaJogador +=  carta.valor
+  }}
+  else{ 
+   maoComputador = " "
+   somaComputador = 0
+ computador.push(comprarCarta())
+ for(let carta of computador){
+    maoComputador +=  carta.texto 
+    somaComputador +=  carta.valor
+    confirmador = 1
+    }}}
+
+while(somaComputador <= 21){
+maoComputador = " "
+  somaComputador = 0
+computador.push(comprarCarta())
+for(let carta of computador){
+     maoComputador +=  carta.texto 
+   somaComputador +=  carta.valor
 }}
 
-if(pontosJogador == pontosComputador){
-   console.log(`Jogador: ${maoJogador} ${pontosJogador} \n
-   computador: ${maoComputador} ${pontosComputador} \n
-   Houve um empate`)
+if(somaJogador == somaComputador || somaJogador > 21 && somaComputador > 21){
+   console.log(`Jogador: ${maoJogador} ${somaJogador} \n computador: ${maoComputador} ${somaComputador} \n Houve um empate`)
 }
-else if(pontosJogador <= 21 || pontosJogador > pontosComputador){
-   console.log(`Jogador: ${maoJogador} ${pontosJogador} \n
-   computador: ${maoComputador} ${pontosComputador} \n
-   O Jogador ganhou!`)
+else if(somaJogador < 22 && somaJogador > somaComputador){
+   console.log(`Jogador: ${maoJogador} ${somaJogador} \n computador: ${maoComputador} ${somaComputador} \n O Jogador ganhou!`)
 }
-else if(pontosComputador <= 21 || pontosComputador > pontosJogador){
-   console.log(`Jogador: ${maoJogador} ${pontosJogador} \n
-   computador: ${maoComputador} ${pontosComputador} \n
-   O Jogador ganhou!`)
+else if(somaComputador < 22 && somaComputador > somaJogador){
+   console.log(`Jogador: ${maoJogador} ${somaJogador} \n computador: ${maoComputador} ${somaComputador} \n O Computador ganhou!`)
 }
