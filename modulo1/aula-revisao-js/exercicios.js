@@ -8,15 +8,20 @@ let array1Exercicio1 = ["Azul", "Amarelo", "Vermelho"]
 let array2Exercicio1 = [1,2,3,4,5,6,7,8,9,10]
 
 function retornaTamanhoArray(array) {
-     return array.length}
+     return array.length
+    }
 
 console.log(retornaTamanhoArray(array1Exercicio1))
 console.log(retornaTamanhoArray(array2Exercicio1))
 
 // EXERCÍCIO 02
+let array1Exercicio2 = [1,2,3,4,5,6,7,8,9]
+let array2Exercicio2 = ["A","B","c","D","E"]
 function retornaArrayInvertido(array) {
-  
+  return array.reverse()
 }
+console.log(retornaArrayInvertido(array1Exercicio2))
+console.log(retornaArrayInvertido(array2Exercicio2))
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
