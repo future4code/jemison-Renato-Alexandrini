@@ -14,6 +14,8 @@ function retornaTamanhoArray(array) {
 console.log(retornaTamanhoArray(array1Exercicio1))
 console.log(retornaTamanhoArray(array2Exercicio1))
 
+
+
 // EXERCÍCIO 02
 let array1Exercicio2 = [1,2,3,4,5,6,7,8,9]
 let array2Exercicio2 = ["A","B","c","D","E"]
@@ -22,6 +24,16 @@ function retornaArrayInvertido(array) {
 }
 console.log(retornaArrayInvertido(array1Exercicio2))
 console.log(retornaArrayInvertido(array2Exercicio2))
+//Desafio
+let novoArrayInvertido =[]
+let contador = (array1Exercicio2.length -1) 
+for (contador; contador != -1; contador -- ){
+novoArrayInvertido.push(array1Exercicio2[contador])
+}
+//reverte o array invertido
+console.log(novoArrayInvertido) 
+
+
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
