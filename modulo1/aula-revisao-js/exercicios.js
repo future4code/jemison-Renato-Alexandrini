@@ -50,11 +50,26 @@ function retornaArrayOrdenado(array) {
 console.log(retornaArrayOrdenado(array1Exercicio3))
 
 //Desafio
+//não consegui pensar em alguma forma ainda
 
 // EXERCÍCIO 04
+
+let array1Exercicio4 =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 function retornaNumerosPares(array) {
-  
+    const arrayPares = array.filter(numerosPares =>(numerosPares % 2) ==0);
+     return arrayPares
 }
+      console.log(retornaNumerosPares(array1Exercicio4))  
+
+//Desafio
+let novoArrayNumeroPares =[]
+for (let item of array1Exercicio4){
+    if((item % 2)==0)
+    novoArrayNumeroPares.push(item)
+}
+  console.log(novoArrayNumeroPares)  
+
+  
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
