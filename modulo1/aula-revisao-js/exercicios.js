@@ -36,9 +36,20 @@ console.log(novoArrayInvertido)
 
 
 // EXERCÍCIO 03
-function retornaArrayOrdenado(array) {
-  
+
+let array1Exercicio3 =["05","60","91","12","54","68","23"]
+//achei esta função na internet, mas realmente não sei explicar o motivo de ordenar certo os números por conta dela....
+function compararNumero (a,b){
+    if(a>b) return 1;
+    if (a<b) return -1;
+    return 0
 }
+function retornaArrayOrdenado(array) {
+  return array.sort(compararNumero)
+ }
+console.log(retornaArrayOrdenado(array1Exercicio3))
+
+//Desafio
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
