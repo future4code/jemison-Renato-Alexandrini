@@ -1,0 +1,22 @@
+Resolução de problemas -
+
+1- Ter Atenção no Enunciado:
+É importante sempre prestar atenção nos enunciados dos exercícios ou em qual for a solicitação, para realizar a tarefa corretamente, realizando exatamente o que foi pedido ou qual a necessidade.
+
+2- Retirar Informações Relevantes:
+Após entender o que foi solicitado, é importante separar as informações que vão garantir que a solicitação vai ser atendida corretamente, verificando se há alguma restrição de informação, como um limite de idade para uma entrada ou como é esperado o retorno, se deve ser uma tabela, ou apenas uma ocorrência de várias.
+
+3- Pensar em Entradas e Saídas:
+após separar as informações, é importante defini quais dados e como esses dados serão inseridos no código e quais informações e como elas devem ser retornadas no final do código.
+
+4- Fazer Um Esquema Visual:
+Fazer um fluxograma, ajuda a visualizar como será a montagem do código, definindo quais serão as condições que os dados irão ser validados, para conseguir enxergar como o código deve ser montado.
+
+5-Criar Um Código Feio:
+Como o fluxograma pronto, basta comoeçar a criar o código, resolvendo cada parte do fluxograma, na sequência, até obter o resultado esperado no final, não importando o tamanho do código.
+
+6-Testar Força-Bruta:
+Com o código pronto, é importante testar de várias formas, image=inando qual tipo de entrada poderia dar erro no seu código e ir corrigindo essas brechas.
+
+7-Refatorar
+No final é só verificar se há redundância em algum processo que possa virar uma função, identar o código de forma que fica de fácil leitura e verificar se os nomes das variáveis estão de fácil compreensão de como ela está sendo utilizada, dessa forma seu código deve estar fácil entendimento, caso você precise realizar alterações futuras no código ou até mesmo outros programador.   
