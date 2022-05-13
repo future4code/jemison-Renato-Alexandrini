@@ -56,7 +56,7 @@ console.log(retornaArrayOrdenado(array1Exercicio3))
 
 let array1Exercicio4 =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 function retornaNumerosPares(array) {
-    const arrayPares = array.filter(numerosPares =>(numerosPares % 2) ==0);
+    const arrayPares = array.filter(numerosPares =>(numerosPares % 2) ==0)
      return arrayPares
 }
       console.log(retornaNumerosPares(array1Exercicio4))  
@@ -72,9 +72,25 @@ for (let item of array1Exercicio4){
   
 
 // EXERCÍCIO 05
+
+const array1Exercicio5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let numeroElevado = 0
+let novoArrayParesElevados =[]
 function retornaNumerosParesElevadosADois(array) {
- 
+  let arrayParesElevados = array.filter(numerosPares =>(numerosPares % 2) ==0)
+  return arrayParesElevados
 }
+  
+  for (let item of retornaNumerosPares(array1Exercicio5)){
+    numeroElevado = (item * item)
+    novoArrAyParesElevados.push(numeroElevado)
+  }  
+console.log(novoArrayParesElevados)
+
+
+
+ 
+
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
