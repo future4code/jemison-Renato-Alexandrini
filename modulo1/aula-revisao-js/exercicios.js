@@ -73,39 +73,79 @@ for (let item of array1Exercicio4){
 
 // EXERCÍCIO 05
 
-const array1Exercicio5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let array1Exercicio5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let numeroElevado = 0
 let novoArrayParesElevados =[]
+
 function retornaNumerosParesElevadosADois(array) {
-  let arrayParesElevados = array.filter(numerosPares =>(numerosPares % 2) ==0)
-  return arrayParesElevados
+  //sem essa linha de reiniciar o valor do array, meu código dava erro, pois apertar o botão de tetar o código, ele ia somandoos valores no meu novo array e dava erro.
+    novoArrayParesElevados =[]
+   for (let i = 0; i <= array.length; i++){
+       if((array[i] % 2) == 0){
+      numeroElevado = (array[i] ** 2)
+      novoArrayParesElevados.push(numeroElevado)
+    }
+  }
+return novoArrayParesElevados
+
 }
-  
-  for (let item of retornaNumerosPares(array1Exercicio5)){
-    numeroElevado = (item * item)
-    novoArrAyParesElevados.push(numeroElevado)
-  }  
-console.log(novoArrayParesElevados)
+console.log(retornaNumerosParesElevadosADois(array1Exercicio5))
 
-
-
- 
 
 
 // EXERCÍCIO 06
+
+let array1Exercicio6 = [12,120,30,4,8,80,62]
 function retornaMaiorNumero(array) {
-  
+  array.sort(compararNumero)
+  return array[(array.length - 1)]
 }
+console.log(retornaMaiorNumero(array1Exercicio6))
+
+
 
 // EXERCÍCIO 07
+
+let maiorNumero = 0
+let maiorDivisivelPorMenor = false
+let diferenca = 0
+
+let arrayMaiorNumeroDiferenca = []
+
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+if(num1 >= num2){
+  maiorNumero = num1
+  maiorDivisivelPorMenor = num1 % num2 == 0
+  diferenca = num1 - num2
 }
+ else if (num1 < num2){
+   maiorNumero = num2
+   maiorDivisivelPorMenor = num2 % num1 == 0
+   diferenca = num2 -num1
+ }
+ 
+ return {maiorNumero, maiorDivisivelPorMenor, diferenca}
+}
+console.log(retornaObjetoEntreDoisNumeros(30,15))
+console.log(retornaObjetoEntreDoisNumeros(15,15))
 
+
+ 
 // EXERCÍCIO 08
+
+let arrayNNumerosPares = []
+let numeroParEx8 = 0
 function retornaNPrimeirosPares(n) {
-   
+  arrayNNumerosPares = []
+  for(let contadorEx8 = 0; contadorEx8 == n; contadorEx8 ++){
+arrayNNumerosPares.push(numeroParEx8)
+numeroParEx8 = numeroParEx8 + 2
+  }
+  return arrayNNumerosPares
 }
+console.log(retornaNPrimeirosPares(5))
+
+
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
