@@ -150,10 +150,25 @@ console.log(retornaNPrimeirosPares(3))
 console.log(retornaNPrimeirosPares(5))
 
 
-// EXERCÍCIO 09
-function classificaTriangulo(ladoA, ladoB, ladoC) {
 
+// EXERCÍCIO 09
+
+let mensagemTriangulo = " "
+function classificaTriangulo(ladoA, ladoB, ladoC) {
+  if(ladoA == ladoB && ladoB == ladoC){
+mensagemTriangulo = "Equilátero"
+  }
+else if( ladoA == ladoB || ladoA == ladoC || ladoB == ladoC){
+  mensagemTriangulo = "Isósceles"
 }
+else{
+  mensagemTriangulo = "Escaleno"
+}
+return mensagemTriangulo
+}
+console.log(classificaTriangulo(10,10,2))
+console.log(classificaTriangulo(10,11,12))
+console.log(classificaTriangulo(12,12,12))
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
