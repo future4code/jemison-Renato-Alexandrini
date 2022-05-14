@@ -78,7 +78,7 @@ let numeroElevado = 0
 let novoArrayParesElevados =[]
 
 function retornaNumerosParesElevadosADois(array) {
-  //sem essa linha de reiniciar o valor do array, meu código dava erro, pois apertar o botão de tetar o código, ele ia somandoos valores no meu novo array e dava erro.
+
     novoArrayParesElevados =[]
    for (let i = 0; i <= array.length; i++){
        if((array[i] % 2) == 0){
@@ -238,14 +238,31 @@ console.log(retornaPessoaAnonimizada(objetoPessoa2))
 
 
 // EXERCÍCIO 13A
+
+let arrayCriancasParque = [
+{nome: "Paula", idade: 12, altura: 1.8},
+{ nome: "João", idade: 20, altura: 1.3},
+{ nome: "Pedro", idade: 15, altura: 1.9},
+{ nome: "Luciano", idade: 22, altura: 1.8},
+{ nome: "Artur", idade: 10, altura: 1.2},
+{ nome: "Soter", idade: 70, altura: 1.9}]
+
 function retornaPessoasAutorizadas(pessoas) {
-   
+  let arrayCriancasQuePodem = pessoas.filter(requisitos =>
+    (requisitos.altura >= 1.5 && requisitos.idade > 14 && requisitos.idade<60))
+    return arrayCriancasQuePodem
 }
+console.log(retornaPessoasAutorizadas(arrayCriancasParque))
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  let arrayCriancasQueNaoPodem = pessoas.filter(requisitos =>
+    (requisitos.altura < 1.5 || requisitos.idade <= 14 || requisitos.idade >60))
+    
+    return arrayCriancasQueNaoPodem
 }
+console.log(retornaPessoasNaoAutorizadas(arrayCriancasParque))
+
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
