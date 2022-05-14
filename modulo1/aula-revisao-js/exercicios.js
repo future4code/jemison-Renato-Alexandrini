@@ -214,9 +214,28 @@ console.log(retornaChamadaDeFilme(objetoFilme))
 
 
 // EXERCÍCIO 12
-function retornaPessoaAnonimizada(pessoa) {
-   
+
+let objetoPessoa = {
+  nome: "Astrodev",
+  idade: 25,
+  email: "astrodev@labenu.com.br",
+  endereco: "Rua do Futuro, 4"
 }
+let objetoPessoa2 = {
+  nome:"Chijo",
+  idade: 27,
+  email:"chijo@labenu.com.br",
+  endereco:"Rua dos Bobos, 0"
+}
+function retornaPessoaAnonimizada(pessoa) {
+   pessoa.nome = "ANÔNIMO"  
+       
+   return pessoa
+}
+console.log(retornaPessoaAnonimizada(objetoPessoa))
+console.log(retornaPessoaAnonimizada(objetoPessoa2))
+
+
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
