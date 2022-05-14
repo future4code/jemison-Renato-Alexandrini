@@ -170,10 +170,28 @@ console.log(classificaTriangulo(10,10,2))
 console.log(classificaTriangulo(10,11,12))
 console.log(classificaTriangulo(12,12,12))
 
+
+
+
 // EXERCÍCIO 10
+
+let array1Exercicio10 = [15,55,1,3,80,90,54,100,45]
+let novoArraySegundoMenorMaior = []
+
 function retornaSegundoMaiorESegundoMenor(array) {
+  novoArraySegundoMenorMaior = []
+  array.sort(compararNumero)
   
+  novoArraySegundoMenorMaior.push(array[(array.length -2)])
+  novoArraySegundoMenorMaior.push(array[1])
+  
+  
+  return novoArraySegundoMenorMaior
 }
+console.log(retornaSegundoMaiorESegundoMenor(array1Exercicio10))
+
+
+
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
