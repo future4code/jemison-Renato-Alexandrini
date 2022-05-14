@@ -194,9 +194,24 @@ console.log(retornaSegundoMaiorESegundoMenor(array1Exercicio10))
 
 
 // EXERCÍCIO 11
-function retornaChamadaDeFilme(filme) {
-   
+
+let objetoFilme ={
+  nome: "O Diabo Veste Prada",
+  ano: 2006,
+  diretor: "David Frankel",
+  atores:["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
 }
+let mensagemFilme = " "
+
+function retornaChamadaDeFilme(filme) {
+  mensagemFilme = " "
+mensagemFilme = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
+   
+return mensagemFilme
+}
+
+console.log(retornaChamadaDeFilme(objetoFilme))
+
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
