@@ -135,16 +135,19 @@ console.log(retornaObjetoEntreDoisNumeros(15,15))
 
 let arrayNNumerosPares = []
 let numeroParEx8 = 0
+let contadorEx8 = 0
 function retornaNPrimeirosPares(n) {
   arrayNNumerosPares = []
-  for(let contadorEx8 = 0; contadorEx8 == n; contadorEx8 ++){
+  contadorEx8 = 0
+  numeroParEx8 = 0
+  for(contadorEx8; contadorEx8 < n; contadorEx8++){
 arrayNNumerosPares.push(numeroParEx8)
-numeroParEx8 = numeroParEx8 + 2
+      numeroParEx8 = numeroParEx8 + 2
   }
   return arrayNNumerosPares
 }
+console.log(retornaNPrimeirosPares(3))
 console.log(retornaNPrimeirosPares(5))
-
 
 
 // EXERCÍCIO 09
