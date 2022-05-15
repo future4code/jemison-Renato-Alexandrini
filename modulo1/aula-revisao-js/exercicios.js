@@ -228,9 +228,11 @@ let objetoPessoa2 = {
   endereco:"Rua dos Bobos, 0"
 }
 function retornaPessoaAnonimizada(pessoa) {
-   pessoa.nome = "ANÔNIMO"  
-       
-   return pessoa
+  const novaArrayPessoa = {
+  ...pessoa,
+    nome: "ANÔNIMO"  
+  }
+   return novaArrayPessoa
 }
 console.log(retornaPessoaAnonimizada(objetoPessoa))
 console.log(retornaPessoaAnonimizada(objetoPessoa2))
@@ -264,17 +266,77 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 console.log(retornaPessoasNaoAutorizadas(arrayCriancasParque))
 
 
-// EXERCÍCIO 14
-function retornaContasComSaldoAtualizado(contas) {
 
+
+// EXERCÍCIO 14
+
+let contasDeClientes = [
+	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
+ let repositorio = 0
+function retornaContasComSaldoAtualizado(contas) {
+  contas.forEach((conta) => {
+       conta.compras.forEach((compra) => {
+        repositorio += compra
+        return repositorio
+    })
+  conta.saldoTotal = conta.saldoTotal-repositorio
+  conta.compras =[]
+    return contas
+  })
+return contas
 }
 
+//console.log(retornaContasComSaldoAtualizado(contasDeClientes))
+
 // EXERCÍCIO 15A
+
+let arrayConsultaPessoas = [
+  { nome: "João", dataDaConsulta: "01/10/2021" },
+  { nome: "Márcia", dataDaConsulta: "04/05/2021" },
+  { nome: "Paula", dataDaConsulta: "03/11/2021" },
+  { nome: "Pedro", dataDaConsulta: "02/07/2021" }
+]
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+  consultas.sort(function compare(primeiro, segundo ) {
+    if (primeiro.nome < segundo.nome) {
+      return -1;
+    }
+    if (primeiro.nome > segundo.nome) {
+      return 1;
+    }
+    else{return 0;}
+  })
+  return consultas
 }
 
 // EXERCÍCIO 15B
+
 function retornaArrayOrdenadoPorData(consultas) {
-   
+ 
+  consultas.sort(function compare(primeira, segunda ) {
+    if(primeira.dataDaConsulta.substr(2) == segunda.dataDaConsulta.substr(2)){
+      if (primeira.dataDaConsulta < segunda.dataDaConsulta) {
+        return -1;
+      }
+      if (primeira.dataDaConsulta> segunda.dataDaConsulta) {
+        return 1;
+      }
+    }
+    if(primeira.dataDaConsulta.substr(2) != segunda.dataDaConsulta.substr(2)){
+    if (primeira.dataDaConsulta.substr(2) < segunda.dataDaConsulta.substr(2)) {
+      return -1;
+    }
+    if (primeira.dataDaConsulta.substr(2) > segunda.dataDaConsulta.substr(2)) {
+      return 1;
+    }}})
+    
+  
+  return consultas
 }
+
