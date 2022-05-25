@@ -1,0 +1,50 @@
+h1{
+    display: inline;
+    margin: 50px;
+    font-family: Calibri;
+    background-color: rgb(129, 218, 213);
+    color: rgb(18, 11, 61);
+}
+h2{
+   
+    display: inline;
+    margin: 500px;
+    font-family: Calibri;
+    background-color:lightsteelblue;
+        color: darkorchid;
+}
+p{
+    margin: 50px;
+    font-size: larger;
+    font-family:Tahoma;
+    font-weight: bold;  
+    
+}
+tr{
+    margin: 50px;
+    font-size: larger;
+    font-family:Arial;
+    font-weight: bold;  
+    color: brown;
+}
+th{
+    padding-left: 70px;
+}
+td{
+    padding-left: 80px;
+    text-align: center;
+}
+body{
+    background-color: lightcyan;
+}
+nav{
+    
+    font-size: larger;
+    display: inline;
+    margin-left: 50px;
+    background-color:lightskyblue; 
+    color: gray;
+}
+footer{
+    margin: 50px;
+}
