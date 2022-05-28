@@ -1,14 +1,29 @@
-ul li{
-      display: inline-block;
-    
-    
+#inicio{
+    padding: 20px;
+    background-color: black;
 }
-.foto{
-    align-items:center ;
+#foto{
+    padding-left:100px ;
+  
 }
-img{
+#nome{
+   padding-left: 160px;
+    font-weight: 900;
+    color: white;
+    font-family: 'Montserrat black 900', sans-serif;
+    font-size: 90px;
+}
+#cabecalhoIntro{
+    font-weight: 600;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 40px;
     text-align: center;
 }
-h1{    
-    text-align:center;
+
+#corpoIntro{
+    margin: 15px;
+    font-weight: 600;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 25px;
+    text-align: justify;
 }
