@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: pink;
+}
+.icone-e-texto{
+    display: flex;
+    justify-content: space-between;
+}
+img{
+    width: 20px;
+  }
+.login{
+   align-items: flex-end;
+}
+
