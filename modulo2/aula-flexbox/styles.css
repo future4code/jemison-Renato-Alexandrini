@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 header{
     padding: 10px 20px 10px 0;
     display: flex;
@@ -18,3 +19,19 @@ header{
 #iconeBolo{
     width: 30px;
 }
+=======
+nav{
+    background-color: pink;
+}
+.icone-e-texto{
+    display: flex;
+    justify-content: space-between;
+}
+img{
+    width: 20px;
+  }
+.login{
+   align-items: flex-end;
+}
+
+
