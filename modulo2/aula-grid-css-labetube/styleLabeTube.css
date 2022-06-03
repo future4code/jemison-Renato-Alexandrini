@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#cabecalho{
+    padding: 10px;
+    background-color: darkorange;
+    display: grid;
+    grid-template-columns: 3% 84% 13%;
+    justify-items: start;
+}
+#icone{
+    width: 40px;
+}
+h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+}
+textarea{
+    resize: none;
+    padding-right: 5px;
+    max-width: 300px;
+    max-height: 30px;
+    text-align:start ;
+    font-family: Calibri;
+    font-size: larger;
+    margin: 2px;
+    align-self: center;
+}
+#seletores{
+    margin: 20px;
+    display:grid;
+    grid-template-columns: repeat(4, 5fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+    border: solid 5px;
+    border-radius: 10px;
+    border-color: orange;
+}
+
+div{
+    margin: 20px;
+    display:grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    border: solid 5px;
+    border-radius: 10px;
+     border-color: green;
+justify-content: center;
+text-align: center;
+
+    }  
+img{
+    width: 300px;
+}
+#paginaVideo{
+    margin: 2%;
+    border: none;
+
+}
+#playerVideo{
+   
+    border: none;
+    max-width: 600px;
+    max-height: 600px;
+    align-items: center;
+}
+
+footer{
+   
+    background-color: rgb(75, 71, 71);
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+
+
