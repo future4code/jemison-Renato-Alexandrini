@@ -67,4 +67,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-Link Surge: excited-mountain.surge.sh
+Link Surge: excited-mountain.surge.sh .....
+
+Novo Link Surge: ruddy-cemetery.surge.sh
