@@ -73,6 +73,7 @@ function Post(props){
   const aoEnviarComentario = () => {
     setComentando(false)
     setNumeroComentarios(numeroComentarios + 1)
+    
   }
 
   let iconeCurtida
@@ -87,7 +88,7 @@ function Post(props){
 
     if(comentando) {
       componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario}/>
-    }
+     }
 
   return(
     <PostContainer>
