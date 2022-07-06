@@ -20,6 +20,7 @@ export function SecaoComentario(props) {
 				onChange={props.onChangeComentario}
 			/>
 			<button onClick={props.aoEnviar}>Enviar</button>
+			
 		</CommentContainer>
 	)
 }
