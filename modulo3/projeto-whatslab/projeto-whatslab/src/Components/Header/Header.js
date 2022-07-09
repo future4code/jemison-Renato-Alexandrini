@@ -4,6 +4,7 @@ import logo from '../../Images/LogoLabenu.jpg'
 
 const HeaderCompleto = styled.header`
 margin: 0px;
+height:7vh;
 display: flex;
 align-items: center;
 color: darkblue;
