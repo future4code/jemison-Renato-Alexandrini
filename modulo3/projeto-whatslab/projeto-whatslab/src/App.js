@@ -164,6 +164,7 @@ function App() {
               placeholder='Usuário'
               value={inputNome}
               onChange={handleInputNome}
+              
             />
             <InputMensagem
               placeholder='Digite sua mensagem'
