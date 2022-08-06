@@ -1,19 +1,15 @@
 import React from "react";
-
-
-
-
-
+import { Card, Descricao, Nome, Foto, Idade } from "./CardPerfisStyled";
 
 function CardPerfis(props){
     const{profile} = props
     return(
-        <div>
-            <img src={profile.photo} alt='Foto'/>
-            <p>{profile.name}</p>
-            <p>{profile.age}</p>
-            <p>{profile.bio}</p>
-        </div>
+        <Card>
+            <Foto src={profile.photo} alt='Foto'/>
+            <Nome>{profile.name}</Nome>
+            <Idade>{profile.age}</Idade>
+            <Descricao>{profile.bio}</Descricao>
+        </Card>
     )
 }
 

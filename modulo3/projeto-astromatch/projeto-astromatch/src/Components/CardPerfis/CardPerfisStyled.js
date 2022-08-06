@@ -1,13 +1,12 @@
-import styled from 'styled-component'
-
-
+import styled from 'styled-components'
 
 export const Card = styled.div`
-margin: 0;
+
 `;
 
 export const Foto = styled.img`
-
+width: 20%;
+height:30%;
 `;
 
 export const Nome = styled.p`

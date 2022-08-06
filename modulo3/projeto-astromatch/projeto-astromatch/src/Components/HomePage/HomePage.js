@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import CardPerfis from '../CardPerfis/CardPerfis.js';
-
+import { MatchesButton, Header, LikeButton, DislikeButton, ClearButton, PrincipalCard } from "./HomePageStyled.js";
+import ListaMatch from '../ListaMatch/ListaMatch.js';
 
 
 function HomePage() {
 
     const [profiles, setProfiles] = useState({})
-    const [matchesList, setMatchesList] = useState([])
+    const [matchList, setMatchList] = useState([])
     useEffect(() => {
         GetCard()
     }, [])
@@ -35,12 +36,14 @@ function HomePage() {
 
     }
 
-    const GetListMatches = () => {
+    const GetListMatch = () => {
         axios.get(urlGetMatches)
-            .then((res) =>{ setMatchesList(res.data.matches)})
+            .then((res) => { setMatchList(res.data.matches) })
+            .catch((err) => { alert("Ocorreu um erro, tente novamente mais tarde!") })
+
     }
 
-    //o botão like ou x irá setar o choiced
+    //o botão like ou Dislike irá setar o choiced
     const Like = (choiced) => {
         const body = {
             id: profiles.id,
@@ -48,20 +51,40 @@ function HomePage() {
 
         }
         axios.post(urlChoosePerson, body)
-            .then((res) => { console.log(res); GetCard() })
+            .then((res) => { GetCard() })
 
-            .catch((err) => { console.log("Ocorreu um erro, tente novamente mais tarde!") })
+            .catch((err) => { alert("Ocorreu um erro, tente novamente mais tarde!") })
 
+    }
+
+    useEffect(() => {
+        GetListMatch()
+    }, [matchList]);
+    //função para abrir outra tela.......
+    const renderPage = (page) => {
+        switch (page) {
+            case 'HomePage':
+                return <HomePage />
+            case 'MatchPage':
+                return <ListaMatch
+                    matchList={matchList}
+                    setMatchList={setMatchList}
+                    GetListMatch={GetListMatch}
+                />
+        }
     }
 
 
     return (
-        <div>
+        <PrincipalCard>
+            <Header />
+            <MatchesButton onClick={() => { renderPage('MatchPage') }} />
             <CardPerfis profile={profiles}></CardPerfis>
-            <button onClick={() => { Like(true) }}>CORACAO</button>
-            <button onClick={() => { Like(false) }}>XIS</button>
+            <LikeButton onClick={() => { Like(true) }}>CORACAO</LikeButton>
+            <DislikeButton onClick={() => { Like(false) }}>XIS</DislikeButton>
+            <ClearButton/>
 
-        </div>
+                 </PrincipalCard>
 
     )
 

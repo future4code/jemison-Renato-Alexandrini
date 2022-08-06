@@ -1,19 +1,30 @@
-import React from 'react';
-import styled from 'styled-component';
+import styled from "styled-components";
 
-export const Header = styled.Header`
-
-`;
-
-export const Like = styled.button`
+export const Header = styled.header`
 
 `;
 
-export const Dislike = styled.button`
+export const HomePageButton = styled.div`
 
 `;
 
-export const CardsEBotoes = styled.div`
+export const MatchesButton = styled.button`
 
 `;
+
+export const LikeButton = styled.button`
+
+`;
+
+export const DislikeButton = styled.button`
+
+`;
+
+export const PrincipalCard = styled.div`
+
+`;
+
+export const ClearButton = styled.button`
+
+`
 
