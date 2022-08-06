@@ -10,16 +10,15 @@ import ListaMatch from '../ListaMatch/ListaMatch.js';
 function HomePage() {
 
     const [profiles, setProfiles] = useState({})
-    const [matchList, setMatchList] = useState([])
+
+    const [page, setPage] = useState('HomePage')
+
     useEffect(() => {
         GetCard()
     }, [])
 
     //retorna perfil aleatório
     const urlProfileChoose = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:RenatoAlexandrini/person'
-
-    //retorna array de perfis que deram match
-    const urlGetMatches = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:RenatoAlexandrini/matches'
 
     //recebe um id e uma escolha com nome choice    
     const urlChoosePerson = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:RenatoAlexandrini/choose-person'
@@ -28,19 +27,17 @@ function HomePage() {
     //simplismente limpa tudo
     const urlClear = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:RenatoAlexandrini/clear'
 
+
+    const ClearAll=()=>{axios.put(urlClear)
+        .then((res) => {alert("Seu histórico está limpo!")})
+        .catch((err) => { console.log("Ocorreu um erro, tente novamente mais tarde!") })
+}
+
+    
     const GetCard = () => {
         axios.get(urlProfileChoose)
             .then((res) => { setProfiles(res.data.profile) })
             .catch((err) => { console.log("Ocorreu um erro, tente novamente mais tarde!") })
-
-
-    }
-
-    const GetListMatch = () => {
-        axios.get(urlGetMatches)
-            .then((res) => { setMatchList(res.data.matches) })
-            .catch((err) => { alert("Ocorreu um erro, tente novamente mais tarde!") })
-
     }
 
     //o botão like ou Dislike irá setar o choiced
@@ -48,49 +45,53 @@ function HomePage() {
         const body = {
             id: profiles.id,
             choice: choiced
-
         }
         axios.post(urlChoosePerson, body)
             .then((res) => { GetCard() })
 
             .catch((err) => { alert("Ocorreu um erro, tente novamente mais tarde!") })
+    }
+
+
+    // seta o page para MatchPage
+    const PageMatchList = (newPage) => {
+        setPage(newPage)
 
     }
 
-    useEffect(() => {
-        GetListMatch()
-    }, [matchList]);
     //função para abrir outra tela.......
-    const renderPage = (page) => {
+    const renderPage = () => {
         switch (page) {
             case 'HomePage':
-                return <HomePage />
+                return (
+                    <PrincipalCard>
+
+                        <Header />
+                        <MatchesButton onClick={() => { PageMatchList('MatchPage') }} />
+                        <CardPerfis profile={profiles}></CardPerfis>
+                        <LikeButton onClick={() => { Like(true) }}>CORACAO</LikeButton>
+                        <DislikeButton onClick={() => { Like(false) }}>XIS</DislikeButton>
+                        <ClearButton onClick={() =>{ClearAll()}} />
+
+                    </PrincipalCard>)
+
+
             case 'MatchPage':
-                return <ListaMatch
-                    matchList={matchList}
-                    setMatchList={setMatchList}
-                    GetListMatch={GetListMatch}
-                />
+                return (
+                    <div>
+                        <MatchesButton onClick={() => { PageMatchList('HomePage') }} />
+                        <ListaMatch />
+                        <ClearButton onClick={() =>{ClearAll()}} />
+
+                    </div>
+                )
         }
     }
-
-
     return (
-        <PrincipalCard>
-            <Header />
-            <MatchesButton onClick={() => { renderPage('MatchPage') }} />
-            <CardPerfis profile={profiles}></CardPerfis>
-            <LikeButton onClick={() => { Like(true) }}>CORACAO</LikeButton>
-            <DislikeButton onClick={() => { Like(false) }}>XIS</DislikeButton>
-            <ClearButton/>
 
-                 </PrincipalCard>
-
+        <div>
+            {renderPage()}
+        </div>
     )
-
-
-
-
 }
-
 export default HomePage
