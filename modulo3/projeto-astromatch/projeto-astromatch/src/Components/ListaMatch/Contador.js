@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
-import { Nome, Foto, DivPai, Header } from './ListaMatchStyled.js';
 
 
-function ListaMatch() {
+
+function Contador() {
 
     const [matchList, setMatchList] = useState([])
 
@@ -23,21 +23,20 @@ function ListaMatch() {
 
     const listaCompletaMatch = matchList.map((apaixonado) => {
         return (
-
-            <DivPai>
-                <Foto src={apaixonado.photo} alt='Foto' />
-                <Nome>{apaixonado.name}</Nome>
-            </DivPai>
+            <div>
+                
+                <img src={apaixonado.photo} alt='Foto' />
+                <p>{apaixonado.name}</p>
+                <p>{apaixonado.age}</p>
+            </div>
         )
     })
 
     return (
-        <div>
-            {listaCompletaMatch}
+        <div> 
+         {listaCompletaMatch.length}
         </div>
     )
 
 }
-export default ListaMatch
-
-
+export default Contador
