@@ -1,0 +1,1 @@
+O Json do Postman e o Wireframe do projeto estão dentro de pastas na raiz do projeto

@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "572fe2cf-5290-4fd7-b7d0-36e7ffb480a4",
+		"name": "LabeX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22377514"
+	},
+	"item": [
+		{
+			"name": "Populate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:RenatoAlexandrini/populate",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labeX",
+						":RenatoAlexandrini",
+						"populate"
+					],
+					"variable": [
+						{
+							"key": "RenatoAlexandrini",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"re.alexandrini@gmail.com\",\r\n\t\"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:RenatoAlexandrini/signup",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labeX",
+						":RenatoAlexandrini",
+						"signup"
+					],
+					"variable": [
+						{
+							"key": "RenatoAlexandrini",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"re.alexandrini@gmail.com\",\r\n\t\"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:RenatoAlexandrini/login",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labeX",
+						":RenatoAlexandrini",
+						"login"
+					],
+					"variable": [
+						{
+							"key": "RenatoAlexandrini",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTrip",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "renato.alexandrini@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkgyV3ZwQWF5elVINHhGWmhaOUU5IiwiZW1haWwiOiJyZS5hbGV4YW5kcmluaUBnbWFpbC5jb20iLCJpYXQiOjE2NjAwOTQyMjB9.FfQH_9fcAnc9iNkgFo9kNhEAiUeWEfqRbfrkQcrBn_Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ano novo em Mercúrio\",\r\n    \"planet\": \"Mercúrio\",\r\n    \"date\": \"31/12/2019\",\r\n    \"description\": \"Venha passar a virada pertinho do Sol!\",\r\n    \"durationInDays\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:RenatoAlexandrini/trips",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labeX",
+						":RenatoAlexandrini",
+						"trips"
+					],
+					"variable": [
+						{
+							"key": "RenatoAlexandrini",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApplyToTrip",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Astrodev\",\r\n    \"age\": 20,\r\n    \"applicationText\": \"Quero muuuuuuito ir!!!\",\r\n    \"profession\": \"Chefe\",\r\n    \"country\": \"Brasil\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:RenatoAlexandrini/trips/:id/apply",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labeX",
+						":RenatoAlexandrini",
+						"trips",
+						":id",
+						"apply"
+					],
+					"variable": [
+						{
+							"key": "RenatoAlexandrini",
+							"value": null
+						},
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTripDetail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkgyV3ZwQWF5elVINHhGWmhaOUU5IiwiZW1haWwiOiJyZS5hbGV4YW5kcmluaUBnbWFpbC5jb20iLCJpYXQiOjE2NjAwOTQyMjB9.FfQH_9fcAnc9iNkgFo9kNhEAiUeWEfqRbfrkQcrBn_Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:RenatoAlexandrini/trip/:id",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labeX",
+						":RenatoAlexandrini",
+						"trip",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "RenatoAlexandrini",
+							"value": null
+						},
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
