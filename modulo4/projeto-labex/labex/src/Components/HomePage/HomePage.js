@@ -2,11 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function Home() {
+function HomePage() {
+
     const navigate = useNavigate();
 
     const goToListTrips =()=>{
-        navigate("")
+        navigate("lists/trips")
+    }
+    const goToLogin =()=>{
+        navigate("login")
     }
 
     return(
@@ -17,3 +21,5 @@ function Home() {
         </div>
     )
 }
+
+export default HomePage;
