@@ -1,24 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Header from '../Header/Header.js';
+import * as Stl from './HomePageStl.js'
 
 function HomePage() {
 
     const navigate = useNavigate();
+    const[profiles, setProfiles] = useState({name:'Anônimo', photo:''})
 
-    const goToListTrips =()=>{
+    const goToListTrips = () => {
         navigate("lists/trips")
     }
-    const goToLogin =()=>{
+    const goToLogin = () => {
         navigate("login")
     }
 
-    return(
-        <div>
-            <h1>HomePage</h1>
-            <button onClick ={goToListTrips}>Lista de viagens</button> 
+    return (
+        <Stl.DivPai>
+            <Header profile={profiles}> </Header>
+            <button onClick={goToListTrips}>Lista de viagens</button>
             <button onClick={goToLogin}>Logar ou cadastrar</button>
-        </div>
+        </Stl.DivPai>
     )
 }
 
