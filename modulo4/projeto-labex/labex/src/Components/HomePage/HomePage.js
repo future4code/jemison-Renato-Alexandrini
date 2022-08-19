@@ -6,7 +6,7 @@ import * as Stl from './HomePageStl.js'
 function HomePage() {
 
     const navigate = useNavigate();
-    const[profiles, setProfiles] = useState({name:'Anônimo', photo:''})
+   
 
     const goToListTrips = () => {
         navigate("lists/trips")
@@ -17,7 +17,7 @@ function HomePage() {
 
     return (
         <Stl.DivPai>
-            <Header profile={profiles}> </Header>
+            <Header></Header> 
             <button onClick={goToListTrips}>Lista de viagens</button>
             <button onClick={goToLogin}>Logar ou cadastrar</button>
         </Stl.DivPai>
