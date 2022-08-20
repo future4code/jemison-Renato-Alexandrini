@@ -11,15 +11,11 @@ function HomePage() {
     const goToListTrips = () => {
         navigate("lists/trips")
     }
-    const goToLogin = () => {
-        navigate("login")
-    }
-
     return (
         <Stl.DivPai>
-            <Header></Header> 
+           
             <button onClick={goToListTrips}>Lista de viagens</button>
-            <button onClick={goToLogin}>Logar ou cadastrar</button>
+           
         </Stl.DivPai>
     )
 }
