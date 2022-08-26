@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import CardsTrips from '../../Components/CardsTrips/CardTrips.js';
-import { BASE_URL } from '../../constants.js/constants.js';
+import { BASE_URL } from '../../constants/constants.js'
 import { useGetData } from '../../Hooks/useGetData.js'
 import * as Stl from './ListTripsStl.js'
 
@@ -17,7 +17,7 @@ function ListTrips() {
     }
 
     const listOfTrips = data && data.trips.map((trip) => {
-        console.log(trip.id)
+        
         return (
 
             <div>

@@ -15,6 +15,8 @@ import plutoImg from '../../Images/10.png';
 
 function CardsTrips(props) {
 
+  
+
   const planetImg = (planet) => {
 
     switch (planet) {
@@ -42,7 +44,7 @@ function CardsTrips(props) {
     }
   }
 
-  const { trips } = props
+  const { trips, goToDetailTrips } = props
 
   return (
 
@@ -53,6 +55,7 @@ function CardsTrips(props) {
       <Stl.TrpPlanet>Planeta: {trips.planet}</Stl.TrpPlanet>
       <Stl.TrpDuration>Duração: {trips.durationInDays} dias</Stl.TrpDuration>
       <Stl.TrpDate>Partida: {trips.date}</Stl.TrpDate>
+    < Stl.BtnDetailTrip onClick = {() => goToDetailTrips(trips.id)}>Detalhes</Stl.BtnDetailTrip>
     </Stl.Card>
 
   )

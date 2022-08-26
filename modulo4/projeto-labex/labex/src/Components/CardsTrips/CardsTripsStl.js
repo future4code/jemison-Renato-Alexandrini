@@ -27,3 +27,7 @@ export const TrpDuration = styled.p`
 export const TrpDate = styled.p`
 
 `;
+
+export const BtnDetailTrip = styled.button`
+
+`;

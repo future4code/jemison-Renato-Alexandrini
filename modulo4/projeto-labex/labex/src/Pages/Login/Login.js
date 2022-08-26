@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import Header from '../../Components/Header/Header.js';
 import { useForm } from '../../Hooks/useForm.js';
-import { BASE_URL } from '../../constants.js/constants.js';
+import { BASE_URL } from '../../constants/constants.js';
 import * as Stl from './LoginStl.js';
 
 
