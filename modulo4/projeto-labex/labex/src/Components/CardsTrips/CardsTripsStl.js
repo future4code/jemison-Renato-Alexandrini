@@ -28,6 +28,3 @@ export const TrpDate = styled.p`
 
 `;
 
-export const BtnDetailTrip = styled.button`
-
-`;

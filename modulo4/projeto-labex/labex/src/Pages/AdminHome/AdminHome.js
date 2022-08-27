@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
-
 import useProtectedPage from '../../Hooks/useProtectedPage.js';
 import * as Stl from './AdminHomeStl.js';
 import CardsTrips from '../../Components/CardsTrips/CardTrips.js';
@@ -47,7 +46,7 @@ function AdminHome() {
 
 
                 <CardsTrips trips={trip} goToDetailTrips={goToDetailTrips}>
-                    
+                < button onClick = {() => goToDetailTrips(trip.id)}>Detalhes</button>  
                 </CardsTrips>
 
 

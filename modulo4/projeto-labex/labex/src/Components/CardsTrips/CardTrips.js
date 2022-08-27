@@ -55,7 +55,7 @@ function CardsTrips(props) {
       <Stl.TrpPlanet>Planeta: {trips.planet}</Stl.TrpPlanet>
       <Stl.TrpDuration>Duração: {trips.durationInDays} dias</Stl.TrpDuration>
       <Stl.TrpDate>Partida: {trips.date}</Stl.TrpDate>
-    < Stl.BtnDetailTrip onClick = {() => goToDetailTrips(trips.id)}>Detalhes</Stl.BtnDetailTrip>
+   
     </Stl.Card>
 
   )
