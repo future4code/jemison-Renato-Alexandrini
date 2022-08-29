@@ -1,16 +1,15 @@
 import React from "react"
 import * as Stl from './CardsTripsStl.js'
-
-import sunImg from '../../Images/1.png';
-import mercuryImg from '../../Images/2.png';
-import venusImg from '../../Images/3.png';
-import earthImg from '../../Images/4.png';
-import marsImg from '../../Images/5.png';
-import jupiterImg from '../../Images/6.png';
-import saturnImg from '../../Images/7.png';
-import uranusImg from '../../Images/8.png';
-import neptuneImg from '../../Images/9.png';
-import plutoImg from '../../Images/10.png';
+import sunImg from '../../Images/Sol.png';
+import mercuryImg from '../../Images/Mercurio.png';
+import venusImg from '../../Images/Venus.png';
+import earthImg from '../../Images/Terra.png';
+import marsImg from '../../Images/Marte.png';
+import jupiterImg from '../../Images/Jupiter.png';
+import saturnImg from '../../Images/Saturno.png';
+import uranusImg from '../../Images/Urano.png';
+import neptuneImg from '../../Images/Netuno.png';
+import plutoImg from '../../Images/Plutao.png';
 
 
 function CardsTrips(props) {
@@ -44,11 +43,11 @@ function CardsTrips(props) {
     }
   }
 
-  const { trips, goToDetailTrips } = props
+  const { trips} = props
 
   return (
 
-    <Stl.Card>
+    <Stl.Card key={trips.id}>
       <Stl.TrpName>{trips.name}</Stl.TrpName>
       {planetImg(trips.planet)}
       <Stl.TrpDescription>{trips.description}</Stl.TrpDescription>

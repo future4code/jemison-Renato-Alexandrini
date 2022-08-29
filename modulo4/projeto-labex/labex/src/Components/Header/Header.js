@@ -1,31 +1,43 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from "react";
 import * as Stl from "./HeaderStl.js";
-import LoginPreto from '../../Images/teste.png'
-import LoginVerde from '../../Images/loginTeste.png'
+import Logo from '../../Images/logo.png';
+
+
 
 function Header() {
     const navigate = useNavigate();
 
     const goToLogin = () => {
-        navigate("login")
+        navigate("/login")
     }
 
+    const goToHome =()=> {
+       navigate("/")
+   }
+
+   const goToLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
+  const goToAdminHome =() => {
+    navigate("/login/admin/homepage")
+  }
+   
     return (
-
-
-        <Stl.DivPai>
-            <Stl.Logo src={LoginPreto} alt='Logo LabeX' />
+        <Stl.Main>
+            <Stl.LoginButton onClick={goToHome} >
+            <Stl.ImgLoginButton src={Logo}/>
+            </Stl.LoginButton>
+            <Stl.Button onClick={goToAdminHome}>Administrador</Stl.Button>
             <Stl.LoginButtonAndImage>
-                <Stl.LoginPhotoAndName>
-                    <Stl.LoginImage src={LoginPreto} alt='Foto Usuário' />
+                <Stl.LoginPhotoAndName>                   
                 </Stl.LoginPhotoAndName>
-                <Stl.LoginButton onClick={goToLogin}>Login</Stl.LoginButton>
+                <Stl.Button onClick={goToLogin}>Login</Stl.Button>
+                <Stl.Button onClick={goToLogout}>Logout</Stl.Button>
             </Stl.LoginButtonAndImage>
-        </Stl.DivPai>
+        </Stl.Main>
     )
 }
-
 
 export default Header

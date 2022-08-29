@@ -18,7 +18,7 @@ function Router() {
                 
                 <Route path="home" element={<HomePage/>} />
                 <Route path="lists/trips" element={<ListTrips/>} />
-                <Route path="/lists/trips/forms/application" element={<ApplicationForm/>} />
+                <Route path="/lists/trips/forms/application/:id" element={<ApplicationForm/>} />
                 <Route path="login" element={<Login/>} />
                 <Route path="/login/admin/homepage" element={<AdminHome/>} />
                 <Route path="/login/admin/homepage/create/trips" element={<CreateTrip/>} />

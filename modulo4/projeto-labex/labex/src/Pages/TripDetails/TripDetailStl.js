@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-export const DivPai = styled.div`
+export const Main = styled.div`
+
+`;
+export const BtnDetailTrips = styled.button`
 
 `;
 
-export const BtnDetailTrips = styled.button`
+export const Form = styled.form`
 
 `;
