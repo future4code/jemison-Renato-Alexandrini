@@ -7,9 +7,9 @@ const users = [
 ]
 
 
-const UserAdd = (newId, newName) => {
+const UserAdd = (newId, newName, validator) => {
 
-	let validArray = []
+	const validArray = []
 	users.forEach((user) => {
 		if (user.id === newId) {
 			validator = false
@@ -39,22 +39,14 @@ UserAdd(5, 'Renato')
 
 const tabuadaArray = []
 const result = 0
+const count = 0
 
 const Tabuada = (number, result) => {
-	for (let count = 0; count < 11; count++) {
+	while (count < 11) {
 		result = count * number
 		tabuadaArray.push(`${number} X ${count} = ${result}`)
+		console.log(count)
 	}
-	console.log(tabuadaArray)
 }
 
 Tabuada(1)
-Tabuada(2)
-Tabuada(3)
-Tabuada(4)
-Tabuada(5)
-Tabuada(6)
-Tabuada(7)
-Tabuada(8)
-Tabuada(9)
-Tabuada(10)
