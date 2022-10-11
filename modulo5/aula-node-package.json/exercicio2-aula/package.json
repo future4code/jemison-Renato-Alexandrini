@@ -1,0 +1,13 @@
+{
+  "name": "exercicio2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "type":"module",
+  "scripts": {
+    "pesquisar-usuarios": "clear && node ./buscaPessoas.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "somar": "clear && node ./somaNumeros.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
