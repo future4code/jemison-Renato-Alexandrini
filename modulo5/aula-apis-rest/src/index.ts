@@ -70,7 +70,7 @@ app.get('/users/filter/type', (req: Request, res: Response) => {
 
 app.get('/users/filter/name', (req: Request, res: Response) => {
     let errorCode = 500
-   
+
     try {
 
         let nameFilter = req.query.filterName as string
@@ -79,16 +79,200 @@ app.get('/users/filter/name', (req: Request, res: Response) => {
             errorCode = 422
             throw new Error('Falta o nome para realizar a busca')
         }
-        const nameExists = users.find((user)=>{
-            return user.name.toLowerCase() === nameFilter.toLowerCase() 
+        const nameExists = users.find((user) => {
+            return user.name.toLowerCase() === nameFilter.toLowerCase()
         })
-        if(!nameExists){
-            errorCode = 404
+        if (!nameExists) {
+            errorCode = 422
             throw new Error('Nome de usuário nao encontrado')
-        }else{
+        } else {
             res.status(200).send(nameExists)
         }
 
+    } catch (error: any) {
+
+        res.status(errorCode).send(error.message)
+    }
+})
+
+//Exercício 04
+// Fizemos algumas buscas no nosso conjunto de itens, agora é hora de **adicionar** coisas. Comecemos criando um usuário na nossa lista.
+// Crie um endpoint que use o método `POST` para adicionar um item ao nosso conjunto de usuários.
+
+//a) Mude o método do endpoint para `PUT`. O que mudou?
+//Na prática não altera no funcionamento do endpoint, porém o PUT é utilizado na atualização de um dado existente
+
+//b) Você considera o método `PUT` apropriado para esta transação? Por quê?
+//Para um melhor entendimento do código é melhor manter o método POST pois se trata da criação de um novo dado
+
+app.post('/users/add', (req: Request, res: Response) => {
+
+    let errorCode = 500
+
+    try {
+
+        const { name, email, type, age }: User = req.body
+
+        if (!name) {
+            errorCode = 422
+            throw new Error('Nome do novo usuário faltando')
+        }
+        if (typeof (name) != 'string') {
+            errorCode = 422
+            throw new Error('Nome inválido')
+        }
+
+        if (!email) {
+            errorCode = 422
+            throw new Error('Email do novo usuário faltando')
+        }
+        if (typeof (email) != 'string') {
+            errorCode = 422
+            throw new Error('email inválido')
+        }
+
+        if (!type) {
+            errorCode = 422
+            throw new Error('Tipo de conta do novo usuário faltando')
+        }
+
+        if (type.toUpperCase() !== USER_TYPE.ADMIN && type.toUpperCase() !== USER_TYPE.NORMAL) {
+            errorCode = 422
+            throw new Error('O tipo de conta do usuário precisa ser "ADMIN" ou "NORMAL"')
+        }
+
+        if (!age) {
+            errorCode = 422
+            throw new Error('Idade do novo usuário faltando')
+        }
+
+        if (typeof (age) != 'number' && age <= 0) {
+            errorCode = 422
+            throw new Error('idade precisa ser um valor acima de 0')
+        }
+
+        const emailExists = users.find((user) => {
+            return user.email.toLowerCase() === email.toLowerCase()
+        })
+
+        if (emailExists) {
+            errorCode = 409
+            throw new Error('Já existe um usuário cadastrado com este email')
+
+        } else {
+            users.push({
+                id: users.length + 1,
+                name: name,
+                email: email,
+                type: type,
+                age: age
+            })
+            res.status(200).send(users)
+        }
+    } catch (error: any) {
+
+        res.status(errorCode).send(error.message)
+    }
+})
+
+//Exercício 05
+// Vamos alterar nosso último usuário. Crie um endpoint com o método PUT para alterar o nome do nosso usuário recém criado.
+// Adicione em seu nome o sufixo -ALTERADO. Para este caso, encerre a request sem enviar uma resposta no body.
+
+//Exercício 06
+// Essa não! Alteramos um dado por engano. Vamos realterar nosso último usuário.
+// Crie um endpoint com o método PATCH para alterar mais uma vez o nome do nosso usuário recém alterado.
+// Adicione em seu nome o sufixo -REALTERADO.
+
+app.put('/user/:userId/update', (req: Request, res: Response) => {
+
+    let errorCode = 500
+
+    try {
+        const chosenUser = req.params.userId
+        const newName = req.query.nameNew as string
+
+        if (!chosenUser) {
+            errorCode = 422
+            throw new Error('Faltando, ID do usuário que será alterado')
+        } else {
+            const userExists = users.find((user) => {
+                return Number(user.id) === Number(chosenUser)
+            })
+            if (!userExists) {
+                errorCode = 422
+                throw new Error('ID do usuário não encontrado')
+
+            } else {
+
+                if (!newName) {
+                    errorCode = 422
+                    throw new Error('Faltando o novo nome do usuário')
+                } else {
+                    users.map((user) => {
+                        if (user.id === Number(chosenUser)) {
+
+                            if (user.name.split(" ")[0].toLowerCase() === newName.toLowerCase()) {
+                                errorCode = 409
+                                throw new Error('Nome igual ao nome anterior')
+                            }
+
+                            if (user.name.includes('ALTERADO')) {
+                                user.name = (newName + ' - REALTERADO')
+                                res.status(200).send(users)
+                            } else {
+                                user.name = (newName + ' - ALTERADO')
+                                res.status(200).send(users)
+                            }
+                        }
+                    })
+                }
+            }
+        }
+
+    } catch (error: any) {
+
+        res.status(errorCode).send(error.message)
+    }
+})
+
+//Exercício 07
+// Por fim, vamos remover este usuário de nossa lista. Crie um endpoint que receba um id em seu path 
+// e utilize-o para removê-lo da lista de usuários.
+
+app.delete('/user/:userId/delete', (req: Request, res: Response) => {
+
+    let errorCode = 500
+
+    try {
+
+        const chosenUser = req.params.userId
+
+        if (!chosenUser) {
+            errorCode = 422
+            throw new Error('Faltando, ID do usuário que será alterado')
+
+        } else {
+
+            const userExists = users.find((user) => {
+                return Number(user.id) === Number(chosenUser)
+            })
+
+            if (!userExists) {
+                errorCode = 422
+                throw new Error('ID do usuário não encontrado')
+
+            } else {
+
+                users.map((user, index) => {
+
+                    if (user.id === Number(chosenUser)) {
+                        return users.splice(index, 1)
+                    }
+                })
+                res.status(200).send(users)
+            }
+        }
     } catch (error: any) {
 
         res.status(errorCode).send(error.message)
@@ -100,3 +284,6 @@ app.get('/users/filter/name', (req: Request, res: Response) => {
 app.listen(3003, () => {
     console.log('Servidor rodando na porta 3003')
 })
+
+//APIs REST DOcumentation
+//https://documenter.getpostman.com/view/22377514/2s8YYFsj12
