@@ -1,0 +1,11 @@
+###
+POST http://localhost:3003/address/add 
+Content-Type: application/json
+ 
+ {
+   "number": 80,
+   "complement": "fundos",
+   "zip_code":"04294005"
+
+ }
+###
