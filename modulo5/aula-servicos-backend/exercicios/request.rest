@@ -9,3 +9,7 @@ Content-Type: application/json
 
  }
 ###
+
+POST http://localhost:3003/sendEmail/: projetos_jbl-aaaaiax6fosqmlb2s7ipkez3d4@labenualunos.slack.com
+Content-Type: application/json
+
