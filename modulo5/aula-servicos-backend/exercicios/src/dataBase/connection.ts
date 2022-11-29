@@ -4,18 +4,6 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-// export const connection = knex({
-//     client:"mysql",
-//     connection:{
-//         host:'35.226.146.116',
-//         port:3306,
-//         user: "4415998-renato-alexandrini",
-//         password: "WmxzRKns/kJxBtW+0FbR",
-//         database:"jbl-4415998-renato-alexandrini",
-//         multipleStatements:true
-//     }
-// }
-// );
 export const connection = knex({
     client:"mysql",
     connection:{
