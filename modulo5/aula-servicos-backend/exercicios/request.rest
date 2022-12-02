@@ -1,0 +1,15 @@
+###
+POST http://localhost:3003/address/add 
+Content-Type: application/json
+ 
+ {
+   "number": 80,
+   "complement": "fundos",
+   "zip_code":"04294005"
+
+ }
+###
+
+POST http://localhost:3003/sendEmail/: projetos_jbl-aaaaiax6fosqmlb2s7ipkez3d4@labenualunos.slack.com
+Content-Type: application/json
+
