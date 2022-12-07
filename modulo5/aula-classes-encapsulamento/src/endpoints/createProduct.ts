@@ -14,8 +14,7 @@ export const createProduct = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        const id = Date.now.toString()
-        const newProduct = new ProductClass(id, name, price)
+        const newProduct = new ProductClass((Date.now.toString()), name, price)
 
         await connection(TABLE_PRODUCTS).insert(newProduct)
 
