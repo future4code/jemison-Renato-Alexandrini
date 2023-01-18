@@ -1,0 +1,122 @@
+[
+    {
+    "id":1 ,
+    "name":"Tomate Italiano",
+    "price":7.99,
+    "qty_stock":700
+},
+{
+    "id":2 ,
+    "name":"Couve Flor" ,
+    "price": 7.99,
+    "qty_stock":500
+},
+{
+    "id":3 ,
+    "name":"Repolho Roxo" ,
+    "price":3.29 ,
+    "qty_stock":600
+},
+{
+    "id":4 ,
+    "name":"Couve Kale" ,
+    "price": 6.99,
+    "qty_stock":200
+},
+{
+    "id":5 ,
+    "name":"Banana Nanica" ,
+    "price":5.30 ,
+    "qty_stock":800
+},
+{
+    "id":6 ,
+    "name":"Uva Crimson" ,
+    "price":12.90 ,
+    "qty_stock": 120
+},
+{
+    "id":7 ,
+    "name":"Kiwi Importado" ,
+    "price":14.27 ,
+    "qty_stock": 200
+},
+{
+    "id":8 ,
+    "name":"Laranja Bahia" ,
+    "price":3.40 ,
+    "qty_stock":900
+},
+{
+    "id":9 ,
+    "name":"Mamão Formosa" ,
+    "price": 8.20,
+    "qty_stock":400
+},
+{
+    "id":10 ,
+    "name":"Maçã Fuji" ,
+    "price":3.30 ,
+    "qty_stock":800
+},
+{
+    "id":11 ,
+    "name":"Ameixa Nacional" ,
+    "price":4.17 ,
+    "qty_stock":750
+},
+{
+    "id":12 ,
+    "name":"Pêra Portuguesa" ,
+    "price":6.54 ,
+    "qty_stock":200
+},
+{
+    "id":13 ,
+    "name":"Figo" ,
+    "price":8.80 ,
+    "qty_stock":50
+},
+{
+    "id":14 ,
+    "name":"Caqui Chocolate" ,
+    "price": 4.83,
+    "qty_stock":500
+},
+{
+    "id":15 ,
+    "name":"Brócolis" ,
+    "price":1.80 ,
+    "qty_stock":600
+},
+{
+    "id":16 ,
+    "name":"Espinafre" ,
+    "price":2.70 ,
+    "qty_stock":500
+},
+{
+    "id":17 ,
+    "name":"Chuchu" ,
+    "price":4.00 ,
+    "qty_stock":600
+},
+{
+    "id":18 ,
+    "name":"Abacaxi Pérola" ,
+    "price": 8.90,
+    "qty_stock":400
+},
+{
+    "id":19 ,
+    "name":"Manga Palmer" ,
+    "price":6.60 ,
+    "qty_stock":700
+},
+{
+    "id":20 ,
+    "name":"Caju" ,
+    "price":16.20 ,
+    "qty_stock":100
+}
+]

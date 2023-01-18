@@ -1,0 +1,13 @@
+
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name":"Renato Alexandrini",
+    "email":"re.alexandrini@gmail.com",
+    "password": "987654321"
+}
+###
+
+GET http://localhost:3003/user
+Content-Type: application/json
