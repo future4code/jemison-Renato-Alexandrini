@@ -30,10 +30,31 @@ export class UserDatabase extends BaseDatabase {
 
     }
 
+    DeleteUser = async (userId:string): Promise<void> => {
+        try {
+          await UserDatabase.connection(this.TABLE_NAME).where('id', userId).del()
+
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+
+    }
+
     UserEmailExists = async (email: string):Promise<UserClass[]> => {
         try {
-            const userEmailExist = await UserDatabase.connection(this.TABLE_NAME).where('email', email)
-            return userEmailExist
+            const userEmailExists = await UserDatabase.connection(this.TABLE_NAME).where('email', email)
+            return userEmailExists
+
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+
+    }
+
+   UserExists = async (userId: string):Promise<UserClass[]> => {
+        try {
+            const userExists = await UserDatabase.connection(this.TABLE_NAME).where('id', userId)
+            return userExists
 
         } catch (error: any) {
             throw new Error(error.message)

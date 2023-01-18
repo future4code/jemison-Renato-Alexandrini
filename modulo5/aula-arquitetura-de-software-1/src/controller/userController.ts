@@ -21,12 +21,27 @@ export class UserController {
         }
     };
 
-    GetUsers = async (req: Request, res: Response): Promise<void> => {
+    getUsers = async (req: Request, res: Response): Promise<void> => {
         try {
             const userBusiness = new UserBusiness()
             const result = await userBusiness.getAllUsers()
 
             res.status(201).send(result);
+
+        } catch (error: any) {
+            res.status(400).send(error.message);
+        }
+    };
+
+    deleteUser = async (req: Request, res: Response): Promise<void> => {
+
+        try {
+            const userId:string = req.params.userId
+                 
+            const userBusiness = new UserBusiness()
+            await userBusiness.deleteUser(userId)
+
+            res.status(201).send({ message: 'Usuário deletado com sucesso.' });
 
         } catch (error: any) {
             res.status(400).send(error.message);

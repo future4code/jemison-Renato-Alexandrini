@@ -24,7 +24,7 @@ export class UserBusiness {
             const userDatabase = new UserDatabase()
 
             const emailExists = await userDatabase.UserEmailExists(input.email)
-            console.log(emailExists)
+           
             if (emailExists.length > 0) {
                 throw new Error('Email cadastrado em outro usuário')
             } else {
@@ -56,5 +56,31 @@ export class UserBusiness {
             throw new Error(error.message)
         }
     }
-}
 
+
+
+    deleteUser = async (userId: string): Promise<void> => {
+
+        try {
+            
+
+            if (!userId) {
+                throw new Error('Id do usuário que será deletado, faltando')
+            }
+
+            const userDatabase = new UserDatabase()
+
+            const userExists = await userDatabase.UserExists(userId)
+            
+            if (userExists.length == 0) {
+                throw new Error('Usuário não encontrado')
+            } else {         
+
+                await userDatabase.DeleteUser(userId)
+
+            }
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+    }
+}
