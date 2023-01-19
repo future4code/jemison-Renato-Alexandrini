@@ -1,0 +1,5 @@
+
+
+export const TABLE_USERS = "LABEFLIX_USER"
+
+export const TABLE_MOVIES = "LABEFLIX_MOVIE"
