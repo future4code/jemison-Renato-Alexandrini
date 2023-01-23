@@ -1,0 +1,38 @@
+[
+    {
+        "id":"1673985609367",
+        "name":"Jorge Almeida",
+        "email":"jorgealmeida@gmail.com",
+        "password":"abc789123"
+    },
+    {
+        "id":" 1673985622128",
+        "name":"Angélica Souza",
+        "email":"angelicasouza@hotmail.com",
+        "password":"zxc456987"
+    },
+    {
+        "id":"1673985629745",
+        "name":"Ivan Machado",
+        "email":"ivanmachado@gmail.com",
+        "password":"fgh394125"
+    },
+    {
+        "id":"1673985636168",
+        "name":"Patrícia Assunção",
+        "email":"patriciassuncao@hotmail.com",
+        "password":"rty582456"
+    },
+    {
+        "id":"1673985644571",
+        "name":"Felipe Camargo",
+        "email":"fecamargo@hotmail.com",
+        "password":"vbn978456"
+    },
+    {
+        "id":"1673985651867",
+        "name":"Denise Pereira",
+        "email":"depereira@gmail.com",
+        "password":"uio654987"
+    }
+]
