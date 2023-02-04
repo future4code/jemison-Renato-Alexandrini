@@ -1,0 +1,25 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Renato",
+    "email": "renato@email.com",
+    "password": "987456321"
+}
+
+###
+
+GET http://localhost:3003/user
+Content-Type: application/json
+
+###
+
+POST  http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Mad Max Fury Road 15",
+    "description": "Num mundo apocalíptico, uma mulher se rebela contra um tirano ao procurar uma nova casa para um grupo de mulheres prisioneiras com a ajuda dum homem chamado Max.",
+    "durationInMinutes": 120,
+    "yearOfRelease": 2015
+}
