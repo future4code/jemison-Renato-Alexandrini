@@ -26,10 +26,9 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
     public getPostById = async (input: PostGetByIdInputDTO): Promise<ReturnPostGetByDTO[]> => {
         try {
             const result = await PostDatabase.connection.raw(`
-                SELECT p.id AS "ID do Post", p.photo AS "URL da imagem", p.description AS "Descrição", p.type AS "tipo de postagem", DATE_FORMAT(STR_TO_DATE(p.created_at, '%Y-%m-%d %H:%i:%s'), '%d/%m/%Y %H:%i:%s') AS "postado em", p.author_id_fk AS "ID Autor", a.name AS "Nome Autor", a.email AS "Email Autor"
-                FROM ${this.TABLE_NAME} p
-                INNER JOIN ${TABLE_USERS} a ON a.id = p.author_id_fk
-                WHERE p.id = "${input.postId}"
+                SELECT id AS "ID do Post", photo AS "URL da imagem", description AS "Descrição", type AS "tipo de postagem", DATE_FORMAT(STR_TO_DATE(created_at, '%Y-%m-%d %H:%i:%s'), '%d/%m/%Y %H:%i:%s') AS "postado em", author_id_fk AS "ID Autor"
+                FROM ${this.TABLE_NAME}
+                WHERE id = "${input.postId}"
             `)
 
             return result[0]
@@ -39,44 +38,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         }
     };
 
-    public getPostByType = async (input: PostGetByTypeInputDTO): Promise<ReturnPostGetByDTO[]> => {
-        try {
-            const result = await PostDatabase.connection.raw(`
-                SELECT p.id AS "ID do Post", p.photo AS "URL da imagem", p.description AS "Descrição", p.type AS "tipo de postagem", DATE_FORMAT(STR_TO_DATE(p.created_at, '%Y-%m-%d %H:%i:%s'), '%d/%m/%Y %H:%i:%s') AS "postado em", p.author_id_fk AS "ID Autor", a.name AS "Nome Autor", a.email AS "Email Autor"
-                FROM ${this.TABLE_NAME} p
-                INNER JOIN ${TABLE_USERS} a ON a.id = p.author_id_fk
-                WHERE p.type = "${input.type}"
-                ORDER BY created_at
-            `)
-
-            return result[0]
-
-        } catch (error: any) {
-            throw new CustomError(400, error.message);
-        }
-    };
-
-    public postFeed = async (input: FeedInputDTO): Promise<ReturnPostGetByDTO[]> => {
-        try {
-            const result = await PostDatabase.connection.raw(`
-            SELECT p.id AS "Id do Post", p.photo AS "URL da imagem", p.description AS "Descrição",
-            p.type AS "tipo de postagem", DATE_FORMAT(STR_TO_DATE(p.created_at, '%Y-%m-%d %H:%i:%s'), '%d/%m/%Y %H:%i:%s') AS "postado em",
-            p.author_id_fk AS "ID Autor", a.name AS "Nome Autor", a.email AS "Email Autor"
-            FROM ${this.TABLE_NAME} p
-            INNER JOIN ${TABLE_USERS} a ON a.id = p.author_id_fk
-            WHERE ${input.stringForQuery}
-            ORDER BY created_at
-            LIMIT ${input.limit};
-            `)
-
-            return result[0]
-
-        } catch (error: any) {
-            throw new CustomError(400, error.message);
-        }
-    };
-
-    public deletePost = async (postId:string): Promise<void> => {
+    public deletePost = async (postId: string): Promise<void> => {
         try {
             await PostDatabase.connection(this.TABLE_NAME).where('id', postId).del()
 

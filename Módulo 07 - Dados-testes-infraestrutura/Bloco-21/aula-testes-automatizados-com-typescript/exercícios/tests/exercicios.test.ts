@@ -4,7 +4,7 @@ import * as ex3 from '../src/ecercicio03';
 import { Exercicio01 } from '../src/exercicio01';
 import { LOCATION, NACIONALITY } from '../src/ecercicio03';
 import { PostClass } from '../src/exercicio06/model/class/postClass';
-import { CustomError } from '../src/exercicio06/error/customError';
+
 
 
 describe('Teste do saldo so usuário referente ao exercicio 01', () => {
